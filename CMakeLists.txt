@@ -14,4 +14,6 @@ add_executable(test_config_parser
 
 target_link_libraries(test_config_parser config_parser_lib)
 
+add_subdirectory(examples)
+
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/../bin)

@@ -27,7 +27,7 @@ int main()
         locationValues["country"] = "y3fjWbF0op";
         config.updateSection("location", locationValues);
 
-        // Update the "location" section with random data
+        // Update the "planets" section
         std::map<std::string, std::string> PlanetValues;
         PlanetValues["sun"] = "none";
         PlanetValues["count"] = "12";
