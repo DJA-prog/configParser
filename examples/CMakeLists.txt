@@ -13,3 +13,6 @@ set_target_properties(alter PROPERTIES OUTPUT_NAME "example_alter")
 # add_executable(delete delete.cpp)
 # target_link_libraries(delete config_parser_lib)
 # set_target_properties(delete PROPERTIES OUTPUT_NAME "example_delete")
+
+
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/../bin/examples)

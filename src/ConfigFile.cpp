@@ -190,4 +190,33 @@ namespace ConfigFileNamespace
             }
         }
     }
+
+    bool ConfigFile::deleteSection(std::string sectionName)
+    {
+        if (sectionExists(sectionName))
+        {
+            sections.erase(sectionName);
+            return true;
+        }
+        return false;
+    }
+
+    bool ConfigFile::deleteSetting(const std::string &sectionName,const std::string &setting)
+    {
+        if (sectionExists(sectionName))
+        {
+            // Check if the setting exists
+            if (settingExists(sectionName, setting))
+            {
+                std::cout << "Error: Setting '" << setting << "' does not exist in section '" << sectionName << "'" << std::endl;
+                return false;
+            }
+            else
+            {
+                sections[sectionName].erase(setting);
+                return true;
+            }
+        }
+        return false;
+    }
 }

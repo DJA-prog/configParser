@@ -58,3 +58,25 @@ void ConfigParser::updateSection(const std::string &section, const std::map<std:
         configFile->appendSection(section, values);
     }
 }
+
+bool ConfigParser::deleteSection(const std::string &section)
+{
+    if (configFile->sectionExists(section))
+    {
+        return configFile->deleteSection(section);
+    }
+    return false;
+}
+
+bool ConfigParser::deleteSetting(const std::string &section, const std::string &setting)
+{
+    if (configFile->sectionExists(section))
+    {
+        if (configFile->settingExists(section, setting))
+        {
+            return configFile->deleteSetting(section, setting);
+        }
+        return false;
+    }
+    return false;
+}
