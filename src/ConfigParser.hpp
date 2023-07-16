@@ -36,7 +36,7 @@ namespace ConfigFileNamespace
         void createSection(std::string sectionName);
 
         bool deleteSection(std::string sectionName);
-        bool ConfigFile::deleteSetting(const std::string &sectionName, const std::string &setting);
+        bool deleteSetting(const std::string &sectionName, const std::string &setting);
 
         // Get methods
         bool getBool(const std::string &section, const std::string &option);

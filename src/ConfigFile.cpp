@@ -196,7 +196,7 @@ namespace ConfigFileNamespace
         if (sectionExists(sectionName))
         {
             sections.erase(sectionName);
-            return true;
+            return save();
         }
         return false;
     }
@@ -206,7 +206,7 @@ namespace ConfigFileNamespace
         if (sectionExists(sectionName))
         {
             // Check if the setting exists
-            if (settingExists(sectionName, setting))
+            if (!settingExists(sectionName, setting))
             {
                 std::cout << "Error: Setting '" << setting << "' does not exist in section '" << sectionName << "'" << std::endl;
                 return false;
@@ -214,7 +214,7 @@ namespace ConfigFileNamespace
             else
             {
                 sections[sectionName].erase(setting);
-                return true;
+                return save();
             }
         }
         return false;
