@@ -33,6 +33,18 @@ int main()
         PlanetValues["count"] = "12";
         PlanetValues["water"] = "true";
         config.updateSection("planets", PlanetValues);
+
+        // Delete section "planets"
+        if (config.deleteSection("planets"))
+            std::cout << "Deleted: planets" << std::endl;
+        else
+            std::cout << "Could not delete: planets" << std::endl;
+
+        // Delete option "label" in "print"
+        if (config.deleteSetting("print", "label"))
+            std::cout << "Deleted: label" << std::endl;
+        else
+            std::cout << "Could not delete: label" << std::endl;
     }
     else
     {
